@@ -7,7 +7,7 @@ feature 'Viewing bookmarks' do
   scenario 'see list of bookmarks' do
     visit('/bookmarks')
     expect(page).to have_content 'http://makersacademy.com'
-    expect(page).to have_content 'https://ruby-doc.org'
-    expect(page).to have_content 'https://gitimmersion.com'
+    expect(page).to have_content 'http://ruby-doc.org'
+    expect(page).to have_content 'http://gitimmersion.com'
   end
 end

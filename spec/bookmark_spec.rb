@@ -6,8 +6,8 @@ describe Bookmark do
       bookmarks = Bookmark.all
 
       expect(bookmarks).to include('http://makersacademy.com')
-      expect(bookmarks).to include('https://ruby-doc.org')
-      expect(bookmarks).to include('https://gitimmersion.com')
+      expect(bookmarks).to include('http://ruby-doc.org')
+      expect(bookmarks).to include('http://gitimmersion.com')
     end
   end
 end

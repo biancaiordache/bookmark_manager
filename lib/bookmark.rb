@@ -1,10 +1,9 @@
-class Bookmark
+require 'pg'
 
+class Bookmark
   def self.all
-    @bookmarks = [
-      'http://makersacademy.com',
-      'https://ruby-doc.org',
-      'https://gitimmersion.com'
-    ]
+    connection = PG.connect(dbname: 'bookmark_manager')
+    result = connection.exec("SELECT * FROM bookmarks;")
+    result.map { |bookmark| bookmark['url'] }
   end
 end
