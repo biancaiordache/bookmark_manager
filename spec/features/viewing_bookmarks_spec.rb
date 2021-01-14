@@ -1,12 +1,13 @@
 require 'pg'
+require 'spec_helper'
 
 feature 'Viewing bookmarks' do
   scenario 'A user can see bookmarks' do
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
-    connection.exec("INSERT INTO bookmarks VALUES(1, 'http://makersacademy.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(2, 'http://ruby-doc.org');")
-    connection.exec("INSERT INTO bookmarks VALUES(3, 'http://gitimmersion.com');")
+    Bookmark.create(url: 'http://makersacademy.com')
+    Bookmark.create(url: 'http://ruby-doc.org')
+    Bookmark.create(url: 'http://gitimmersion.com')
 
     visit('/bookmarks')
 

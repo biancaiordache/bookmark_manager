@@ -15,5 +15,12 @@ describe Bookmark do
       expect(bookmarks).to include('http://ruby-doc.org')
       expect(bookmarks).to include('http://gitimmersion.com')
     end
+
+    describe '.create' do
+      it 'creates a new bookmark' do
+        Bookmark.create(url: 'http://testbookmark.com')
+        expect(Bookmark.all). to include 'http://testbookmark.com'
+      end
+    end
   end
 end
